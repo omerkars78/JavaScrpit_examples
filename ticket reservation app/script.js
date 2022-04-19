@@ -33,23 +33,23 @@ function calculateTotal() {
     });
 
     // [1,3,5]
-    let selectedSeatIndexs = selectedSeatsArr.map(function(seat) {
+    let selected_seat_index = selectedSeatsArr.map(function(seat) {
         return seatsArr.indexOf(seat);
     });
 
-    let selectedSeatCount = selectedSeats.length;
-    count.innerText = selectedSeatCount;
-    amount.innerText = selectedSeatCount * select.value;
+    let selected_seat_count = selectedSeats.length;
+    count.innerText = selected_seat_count;
+    amount.innerText = selected_seat_count * select.value;
 
-    saveToLocalStorage(selectedSeatIndexs);
+    saveToLocalStorage(selected_seat_index);
 }
 
 function getFromLocalStorage() {
-    const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    const selected_seats = JSON.parse(localStorage.getItem('selectedSeats'));
 
-    if (selectedSeats !=null && selectedSeats.length > 0) {
+    if (selected_seats !=null && selected_seats.length > 0) {
         seats.forEach(function(seat, index) {
-            if (selectedSeats.indexOf(index) > -1) {
+            if (selected_seats.indexOf(index) > -1) {
                 seat.classList.add('selected');
             }
         });
@@ -57,14 +57,14 @@ function getFromLocalStorage() {
 
 
 
-    const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
+    const selected_movie_index = localStorage.getItem('selected_movie_index');
 
-    if (selectedMovieIndex != null) {
-        select.selectedIndex = selectedMovieIndex;
+    if (selected_movie_index != null) {
+        select.selected_index = selected_index;
     }
 }
 
 function saveToLocalStorage(indexs) {
-    localStorage.setItem('selectedSeats', JSON.stringify(indexs));
-    localStorage.setItem('selectedMovieIndex', select.selectedIndex);
+    localStorage.setItem('selected_seats', JSON.stringify(indexs));
+    localStorage.setItem('selected_movie_index', select.selected_index);
 }
