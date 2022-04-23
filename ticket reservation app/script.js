@@ -60,7 +60,7 @@ function getFromLocalStorage() {
     const selected_movie_index = localStorage.getItem('selected_movie_index');
 
     if (selected_movie_index != null) {
-        select.selected_index = selected_index;
+        select.selectedIndex = selectedIndex;
     }
 }
 
